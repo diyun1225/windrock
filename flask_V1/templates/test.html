@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏下拉菜单</title>
+    <style>
+        /* 设置导航栏基础样式 */
+        .navbar {
+            overflow: hidden;
+            /* 白色背景 */
+            background: #ffffff; /* 保持導航欄背景為白色 */
+            font-family: "Euclid Circular A";
+        }
+        
+        /* 导航链接基础样式 */
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #606468; /* 深灰色文字 */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    
+        /* 鼠标悬停时的下拉菜单容器 */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+    
+        /* 下拉菜单按钮样式 */
+        .dropdown .dropbtn {
+            border: none;
+            outline: none;
+            color: #606468; /* 修改為深灰色文字 */
+            padding: 14px 16px;
+            background-color: inherit; /* 背景色繼承白色 */
+            font-family: inherit;
+            margin: 0;
+        }
+    
+        /* 容器需要位于dropbtn上方 */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ccc; /* 淺灰色背景 */
+        }
+    
+        /* 下拉内容（隐藏） */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff; /* 白色背景 */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+    
+        /* 下拉内容里面的链接 */
+        .dropdown-content a {
+            float: none;
+            color: black; /* 黑色文字 */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+    
+        /* 鼠标悬停时显示下拉内容 */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #ccc; /* 淺灰色背景 */
+        }
+    </style>
+    
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#home">開源專案平台</a>
+    <div class="dropdown">
+        <button class="dropbtn">ESP32專區 
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/login">AHT15溫濕度感測器</a><!--href="路由"-->
+            <a href="#">DHT11溫濕度感測器</a>
+            <a href="#">链接 3</a>
+        </div>
+    </div> 
+</div>
+<div class="">
+
+</div>
+
+</body>
+</html>
