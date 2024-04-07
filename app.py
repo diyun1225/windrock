@@ -61,9 +61,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 
-@app.route('/')
-def home():
-    return render_template('ESP32.html')
+
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -94,7 +92,7 @@ def logout():
     logout_user()
     return redirect(url_for('login'))
 
-@app.route('/ESP32', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def ESP32():
     conn = sqlite3.connect('/tro.db')  
     c = conn.cursor()
@@ -102,7 +100,7 @@ def ESP32():
     c.execute("SELECT * FROM esp32_aht15")  # 取得TABLE
     data = c.fetchall()
     conn.close()
-    return render_template('ESP32.html',data=data)
+    return render_template('index.html',data=data)
 
 @app.route('/ESP32/sensor', methods=['GET'])
 def show_file():
